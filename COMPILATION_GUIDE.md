@@ -2,9 +2,28 @@
 
 **Author:** Craig GAZIMBI (402417962)
 
+**Repository:** https://github.com/therealcraiggazimbi/neoverse-
+
 ---
 
-## Fastest Way to Compile
+## Get the Code (Step 1)
+
+**Option A: Clone from GitHub (Recommended)**
+
+```bash
+git clone https://github.com/therealcraiggazimbi/neoverse-
+cd neoverse-
+```
+
+**Option B: Download ZIP**
+
+Visit: https://github.com/therealcraiggazimbi/neoverse-
+
+Click "Code" → "Download ZIP" → Extract
+
+---
+
+## Fastest Way to Compile (Step 2)
 
 ### Using CLion (Recommended)
 

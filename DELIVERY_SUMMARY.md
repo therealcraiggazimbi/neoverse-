@@ -424,16 +424,14 @@ Tests Failed:         0
 
 ## Conclusion
 
-The NeoVerse AI City Survival System represents a complete, production-ready C++17 console application demonstrating:
+The NeoVerse AI City Survival System is a complete C++17 console application that covers all the assignment requirements. It demonstrates:
 
-- Advanced data structure selection and usage
-- Object-oriented design with polymorphism
-- Standard Template Library mastery
-- Algorithmic complexity analysis
-- Professional software engineering practices
-- Comprehensive testing and documentation
-
-All 100 marks of the assignment specification have been fulfilled with exemplary implementation quality and pedagogical clarity.
+- Data structure selection and usage (vector, list, queue, stack)
+- Object-oriented design with inheritance and polymorphism
+- Use of STL algorithms (sort, find, max_element, count_if)
+- Complexity analysis (Big-O)
+- File I/O and persistence
+- Unit testing
 
 ---
 
@@ -441,6 +439,5 @@ All 100 marks of the assignment specification have been fulfilled with exemplary
 
 For support, refer to README.md or COMPILATION_GUIDE.md.
 
-Signed: Craig GAZIMBI  
-Date: 2026-09-23  
-Student ID: 402417962
+Craig GAZIMBI  
+402417962

@@ -909,8 +909,6 @@ int criticalCount = std::count_if(cityHistoricalLogs.begin(),
    - Test coverage across all modules
    - Pass/fail reporting
 
-**Total: 100 MARKS**
-
 ---
 
 ## Support & Troubleshooting
@@ -938,16 +936,3 @@ If CSV export fails:
 
 ---
 
-## Declaration of Originality
-
-I declare that this assignment is my own work and has not been copied from any other source except where due acknowledgment is made. I affirm that all sources used have been properly cited and that this submission complies with the institution's policies on academic integrity and plagiarism.
-
-**Student Signature:** Craig GAZIMBI  
-**Student Number:** 402417962  
-**Date:** 2026-09-23
-
----
-
-**End of Documentation**
-
-For questions or clarifications regarding this implementation, reference the inline code comments or contact the author via the Richfield Graduate Institute.

@@ -1,0 +1,120 @@
+================================================================================
+                    GITHUB REPOSITORY INSTRUCTIONS
+================================================================================
+
+Repository URL:
+  https://github.com/therealcraiggazimbi/neoverse-
+
+For Lecturers - Two Ways to Access the Project:
+
+================================================================================
+METHOD 1: CLONE VIA GIT (Recommended)
+================================================================================
+
+  git clone https://github.com/therealcraiggazimbi/neoverse-
+  cd neoverse-
+  bash NeoVerse
+
+This gives you:
+  ✓ All source code files
+  ✓ Build scripts (NeoVerse, NeoVerse.bat)
+  ✓ Documentation (README files)
+  ✓ Unit tests
+  ✓ Git history and version control
+
+================================================================================
+METHOD 2: DOWNLOAD ZIP
+================================================================================
+
+  1. Visit: https://github.com/therealcraiggazimbi/neoverse-
+  2. Click green "Code" button
+  3. Select "Download ZIP"
+  4. Extract the ZIP file
+  5. cd to extracted folder
+  6. Run: bash NeoVerse (or NeoVerse.bat on Windows)
+
+================================================================================
+QUICK START AFTER CLONING
+================================================================================
+
+  cd neoverse-
+  bash NeoVerse
+  
+  Select option 1: Compile and run main application
+  Login: alice_chen / secure_pass_123
+  Explore the system or run a 50-event simulation
+
+================================================================================
+RUN UNIT TESTS
+================================================================================
+
+  After cloning:
+  
+  cd neoverse-
+  bash NeoVerse
+  
+  Select option 2: Compile and run unit tests
+  Expected: 42/42 tests passing
+
+================================================================================
+KEY DOCUMENTATION FILES IN REPOSITORY
+================================================================================
+
+START_HERE.txt           ← Read this first (quick guide)
+README_LECTURER.md       ← Reference guide for evaluation
+README.md                ← Full technical documentation
+COMPILATION_GUIDE.md     ← Platform-specific compilation
+DELIVERY_SUMMARY.md      ← Specification compliance matrix
+
+================================================================================
+WHAT'S IN THE REPOSITORY
+================================================================================
+
+Source Code (10 files):
+  ✓ Types.h/cpp
+  ✓ CityComponent.h/cpp
+  ✓ Subsystems.h/cpp
+  ✓ SimulationEngine.h/cpp
+  ✓ Main.cpp
+  ✓ UnitTests.cpp
+
+Build Automation:
+  ✓ NeoVerse (shell script - macOS/Linux)
+  ✓ NeoVerse.bat (batch script - Windows)
+  ✓ CMakeLists.txt (CMake configuration)
+
+Documentation:
+  ✓ START_HERE.txt (this guide)
+  ✓ README_LECTURER.md
+  ✓ README.md
+  ✓ COMPILATION_GUIDE.md
+  ✓ DELIVERY_SUMMARY.md
+  ✓ GITHUB_INSTRUCTIONS.txt
+
+Configuration:
+  ✓ .gitignore (excludes compiled files)
+
+================================================================================
+SYSTEM REQUIREMENTS
+================================================================================
+
+  ✓ C++17 compiler (GCC 7+, Clang 5+, MSVC 2017+)
+  ✓ Git (for cloning)
+  ✓ Bash (for NeoVerse script on macOS/Linux)
+  ✓ 50MB free disk space
+
+================================================================================
+WHAT'S INCLUDED
+================================================================================
+
+- 2527 lines of production code
+- 42 unit tests
+- Documentation
+- Build automation for all platforms
+- Git version control
+
+================================================================================
+
+GitHub: https://github.com/therealcraiggazimbi/neoverse-
+Contact: Craig GAZIMBI (402417962)
+

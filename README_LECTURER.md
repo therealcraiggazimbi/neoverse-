@@ -7,6 +7,20 @@
 
 ---
 
+## Clone Repository (Recommended)
+
+Get all source code and documentation from GitHub:
+
+```bash
+git clone https://github.com/therealcraiggazimbi/neoverse-
+cd neoverse-
+bash NeoVerse              # Automated compilation and execution
+```
+
+Or download the ZIP file from: https://github.com/therealcraiggazimbi/neoverse-/archive/main.zip
+
+---
+
 ## How to Compile
 
 Requires `g++` or `clang++` with C++17 support (GCC 7+ or Clang 5+).
@@ -238,14 +252,14 @@ Types
 
 ---
 
-## Key Features Demonstrated
+## Key Features
 
-✓ **Authentication:** Encrypted password storage, binary search O(log n)  
-✓ **Data Structures:** Vector (O(1) access), List (O(1) insert), Queue (FIFO), Stack (LIFO)  
-✓ **Polymorphism:** Virtual methods, dynamic dispatch, 4 subsystem implementations  
-✓ **Algorithms:** std::sort (O(n log n)), max/min (O(n)), count_if (O(n))  
-✓ **File I/O:** Binary serialization, CSV export, configuration management  
-✓ **Testing:** 42 unit tests, 100% pass rate, custom assertion macros  
+- **Authentication:** Encrypted password storage, binary search O(log n)  
+- **Data Structures:** Vector (O(1) access), List (O(1) insert), Queue (FIFO), Stack (LIFO)  
+- **Polymorphism:** Virtual methods, dynamic dispatch, 4 subsystem implementations  
+- **Algorithms:** std::sort (O(n log n)), max/min (O(n)), count_if (O(n))  
+- **File I/O:** Binary serialization, CSV export  
+- **Testing:** 42 unit tests  
 
 ---
 
@@ -329,20 +343,7 @@ Menu: 8 (Export to CSV)
 
 ---
 
-## Grading Criteria Met
 
-| Criterion | Implementation | Marks |
-|-----------|---------------|----|
-| **Authentication** | Engineer class, binary search, clearance verification | 15 |
-| **Data Management** | Vector (O(1)), List (unbounded), operations documented | 20 |
-| **Event Processing** | FIFO queue, LIFO stack, prioritization | 25 |
-| **OOP Architecture** | Abstract base class, 4 subsystems, polymorphism | 15 |
-| **STL Algorithms** | sort, find_if, max/min_element, count_if | 10 |
-| **File I/O** | Binary persistence, CSV export | 5 |
-| **Unit Testing** | 42 assertions, 7 test suites, 100% pass | 10 |
-| **TOTAL** | Complete implementation | **100** |
-
----
 
 ## Troubleshooting
 
