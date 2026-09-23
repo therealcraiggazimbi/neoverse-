@@ -1,0 +1,165 @@
+#!/bin/bash
+
+# ──────────────────────────────────────────────────────────────────────────────
+# NeoVerse AI City Survival System - Build and Run Script
+# Author: Craig GAZIMBI (Student ID: 402417962)
+# Purpose: Automated compilation and execution for Unix-like systems
+# ──────────────────────────────────────────────────────────────────────────────
+
+# Color output for better readability
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
+# Script configuration
+EXECUTABLE_NAME="neoverse_main"
+TEST_EXECUTABLE="neoverse_tests"
+CXX_STANDARD="-std=c++17"
+COMPILER_FLAGS="-Wall -Wextra -O2"
+
+echo -e "${BLUE}╔════════════════════════════════════════════════════════════╗${NC}"
+echo -e "${BLUE}║       NeoVerse AI City Survival System - Build Tool         ║${NC}"
+echo -e "${BLUE}║              Craig GAZIMBI | Student 402417962             ║${NC}"
+echo -e "${BLUE}╚════════════════════════════════════════════════════════════╝${NC}"
+echo ""
+
+# Check if g++ or clang++ is available
+if ! command -v g++ &> /dev/null && ! command -v clang++ &> /dev/null; then
+    echo -e "${RED}ERROR: Neither g++ nor clang++ found. Please install GCC or Clang.${NC}"
+    exit 1
+fi
+
+# Determine which compiler to use (prefer clang++)
+if command -v clang++ &> /dev/null; then
+    COMPILER="clang++"
+else
+    COMPILER="g++"
+fi
+
+echo -e "${YELLOW}Using compiler: ${COMPILER}${NC}"
+echo -e "${YELLOW}C++ Standard: C++17${NC}"
+echo ""
+
+# Check if source files exist
+REQUIRED_FILES=("Main.cpp" "SimulationEngine.cpp" "SimulationEngine.h" "Types.cpp" "Types.h" "CityComponent.cpp" "CityComponent.h" "Subsystems.cpp" "Subsystems.h")
+
+for file in "${REQUIRED_FILES[@]}"; do
+    if [ ! -f "$file" ]; then
+        echo -e "${RED}ERROR: Required file not found: $file${NC}"
+        exit 1
+    fi
+done
+
+echo -e "${GREEN}✓ All source files found${NC}"
+echo ""
+
+# Display menu
+echo "Choose an option:"
+echo "  1) Compile and run main application"
+echo "  2) Compile and run unit tests"
+echo "  3) Compile both (no run)"
+echo "  4) Clean (remove executables)"
+echo "  5) Exit"
+echo ""
+
+read -p "Enter selection (1-5): " choice
+
+case $choice in
+    1)
+        echo ""
+        echo -e "${YELLOW}[1/3] Compiling main application...${NC}"
+        echo "Command: $COMPILER $CXX_STANDARD $COMPILER_FLAGS Main.cpp SimulationEngine.cpp Types.cpp CityComponent.cpp Subsystems.cpp -o $EXECUTABLE_NAME"
+        echo ""
+
+        if $COMPILER $CXX_STANDARD $COMPILER_FLAGS Main.cpp SimulationEngine.cpp Types.cpp CityComponent.cpp Subsystems.cpp -o $EXECUTABLE_NAME; then
+            echo -e "${GREEN}✓ Compilation successful${NC}"
+            echo ""
+            echo -e "${YELLOW}[2/3] Setting permissions...${NC}"
+            chmod +x $EXECUTABLE_NAME
+            echo -e "${GREEN}✓ Executable is ready${NC}"
+            echo ""
+            echo -e "${YELLOW}[3/3] Running application...${NC}"
+            echo ""
+            ./$EXECUTABLE_NAME
+        else
+            echo -e "${RED}✗ Compilation failed${NC}"
+            exit 1
+        fi
+        ;;
+    2)
+        echo ""
+        echo -e "${YELLOW}[1/3] Compiling unit tests...${NC}"
+        echo "Command: $COMPILER $CXX_STANDARD $COMPILER_FLAGS UnitTests.cpp SimulationEngine.cpp Types.cpp CityComponent.cpp Subsystems.cpp -o $TEST_EXECUTABLE"
+        echo ""
+
+        if $COMPILER $CXX_STANDARD $COMPILER_FLAGS UnitTests.cpp SimulationEngine.cpp Types.cpp CityComponent.cpp Subsystems.cpp -o $TEST_EXECUTABLE; then
+            echo -e "${GREEN}✓ Compilation successful${NC}"
+            echo ""
+            echo -e "${YELLOW}[2/3] Setting permissions...${NC}"
+            chmod +x $TEST_EXECUTABLE
+            echo -e "${GREEN}✓ Test executable is ready${NC}"
+            echo ""
+            echo -e "${YELLOW}[3/3] Running tests...${NC}"
+            echo ""
+            ./$TEST_EXECUTABLE
+        else
+            echo -e "${RED}✗ Compilation failed${NC}"
+            exit 1
+        fi
+        ;;
+    3)
+        echo ""
+        echo -e "${YELLOW}Compiling main application...${NC}"
+        if $COMPILER $CXX_STANDARD $COMPILER_FLAGS Main.cpp SimulationEngine.cpp Types.cpp CityComponent.cpp Subsystems.cpp -o $EXECUTABLE_NAME; then
+            echo -e "${GREEN}✓ Main application compiled${NC}"
+            chmod +x $EXECUTABLE_NAME
+        else
+            echo -e "${RED}✗ Main compilation failed${NC}"
+            exit 1
+        fi
+
+        echo ""
+        echo -e "${YELLOW}Compiling unit tests...${NC}"
+        if $COMPILER $CXX_STANDARD $COMPILER_FLAGS UnitTests.cpp SimulationEngine.cpp Types.cpp CityComponent.cpp Subsystems.cpp -o $TEST_EXECUTABLE; then
+            echo -e "${GREEN}✓ Unit tests compiled${NC}"
+            chmod +x $TEST_EXECUTABLE
+        else
+            echo -e "${RED}✗ Test compilation failed${NC}"
+            exit 1
+        fi
+
+        echo ""
+        echo -e "${GREEN}✓ Both executables ready:${NC}"
+        echo "   - ./$EXECUTABLE_NAME (main application)"
+        echo "   - ./$TEST_EXECUTABLE (unit tests)"
+        ;;
+    4)
+        echo ""
+        if [ -f "$EXECUTABLE_NAME" ]; then
+            rm $EXECUTABLE_NAME
+            echo -e "${GREEN}✓ Removed $EXECUTABLE_NAME${NC}"
+        fi
+        if [ -f "$TEST_EXECUTABLE" ]; then
+            rm $TEST_EXECUTABLE
+            echo -e "${GREEN}✓ Removed $TEST_EXECUTABLE${NC}"
+        fi
+
+        # Clean up generated data files
+        rm -f neoverse_*.csv 2>/dev/null
+        echo -e "${GREEN}✓ Cleaned up${NC}"
+        ;;
+    5)
+        echo "Exiting..."
+        exit 0
+        ;;
+    *)
+        echo -e "${RED}Invalid selection. Exiting.${NC}"
+        exit 1
+        ;;
+esac
+
+echo ""
+echo -e "${GREEN}✓ Operation completed successfully${NC}"
+echo ""
